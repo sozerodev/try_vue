@@ -71,6 +71,7 @@
     <button @click="warning_list[idx]++">허위매물 신고</button>
     <span>신고수: {{ warning_list[idx] }}</span> <br />
   </div>
+  
 
   <hr />
   <!-- product_info_list -->
