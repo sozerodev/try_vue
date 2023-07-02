@@ -72,7 +72,6 @@
     <span>신고수: {{ warning_list[idx] }}</span> <br />
   </div>
   
-
   <hr />
   <!-- product_info_list -->
 
