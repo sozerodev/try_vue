@@ -1,9 +1,14 @@
 <template>
   <div>
-    <h4>{{ roomInfo.id + 1 }}. {{ roomInfo.title }}</h4>
+    <h4 @click="$emit('openModal', roomInfo.id)">
+
+      {{ roomInfo.id + 1 }}. {{ roomInfo.title }}
+    
+    </h4>
     <img :src="roomInfo.image" alt="">
     <div>{{roomInfo.content}}</div>
     <div>{{ roomInfo.price }}원</div>
+
   </div>
 </template>
 <script>

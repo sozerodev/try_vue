@@ -6,9 +6,9 @@
   </div> -->
 
   <ModalTest
-    :product_info_list="product_info_list"
+    :product_info="product_info_list[selectedIdx]"
     :isModalOpen="isModalOpen"
-    
+    @closeModal="isModalOpen=false"
   />
 
   <!-- modal -->
@@ -76,9 +76,10 @@
   <!-- product_info_list -->
 
   <h1>카드컴포넌트</h1>
-  <OneroomCard v-for="(item, idx) in product_info_list" :roomInfo="item" :key="idx"/>
+  <!-- <OneroomCard @openModal="(param) => {isModalOpen=true; selectedIdx = param}"  v-for="(item, idx) in product_info_list" :roomInfo="item" :key="idx"/> -->
+  <OneroomCard @openModal="isModalOpen=true; selectedIdx = $event"  v-for="(item, idx) in product_info_list" :roomInfo="item" :key="idx"/>
 
-  <hr>
+  <hr> 
   <div v-for="(item, idx) in product_info_list" v-bind:key="idx">
     <h4
       @click="

@@ -8,9 +8,10 @@
 
       <br /> -->
       <DiscountModal />
-      {{ product_info_list }}
+      {{ product_info }}
       <!-- 부모컴포넌트로부터 받아온 값인 props는 read-only이다. 그렇기에 수정하면 에러가 남 -->
       <!-- <button @click="isModalOpen = false">닫기</button> -->
+      <button @click="$emit('closeModal', false)" >닫기</button>
 
     </div>
   </div>
@@ -19,8 +20,7 @@
 export default {
   name: "ModalTest",
   props: {
-      product_info_list: Array,
-      누른거: Boolean,
+      product_info: Object,
       isModalOpen: Boolean
     
   },
